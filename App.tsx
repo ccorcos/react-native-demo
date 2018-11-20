@@ -41,7 +41,7 @@ const noAnimation = {
 	// },
 }
 
-const sprigAnimation = {
+const springAnimation = {
 	duration: 500,
 	create: {
 		duration: 300,
@@ -54,7 +54,7 @@ const sprigAnimation = {
 	},
 }
 
-const resizeAnimation = sprigAnimation
+const resizeAnimation = springAnimation
 
 export default class App extends Component<AppProps, AppState> {
 	state = {
