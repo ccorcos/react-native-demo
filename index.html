@@ -1,0 +1,145 @@
+<html>
+	<head>
+		<meta
+			name="viewport"
+			content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+		/>
+		<style>
+			html {
+				overflow: hidden;
+			}
+			html,
+			body {
+				padding: 0;
+				margin: 0;
+			}
+			body {
+				box-sizing: border-box;
+				border: 2px solid red;
+				overflow: scroll;
+				-webkit-overflow-scrolling: touch;
+				font-size: 16px;
+
+				/* iPhone X Padding */
+				padding-left: env(safe-area-inset-left);
+				padding-right: env(safe-area-inset-right);
+				padding-top: env(safe-area-inset-top);
+				padding-bottom: env(safe-area-inset-bottom);
+			}
+			.lorem {
+				padding: 10px 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae
+			reprehenderit asperiores laborum perspiciatis veritatis libero laudantium
+			illum ipsa tempore quibusdam, debitis sint harum eos labore eum nobis
+			error architecto sit.
+		</div>
+		<input type="text" placeholder="open keyboard" />
+		<button>dismiss keyboard</button>
+		<div id="resize-count"></div>
+		<div id="resize-height"></div>
+		<div id="poll-height"></div>
+		<div id="body-height"></div>
+		<div id="html-height"></div>
+		<div class="lorem">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae
+			reprehenderit asperiores laborum perspiciatis veritatis libero laudantium
+			illum ipsa tempore quibusdam, debitis sint harum eos labore eum nobis
+			error architecto sit.
+		</div>
+		<div class="lorem">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae
+			reprehenderit asperiores laborum perspiciatis veritatis libero laudantium
+			illum ipsa tempore quibusdam, debitis sint harum eos labore eum nobis
+			error architecto sit.
+		</div>
+		<div class="lorem">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae
+			reprehenderit asperiores laborum perspiciatis veritatis libero laudantium
+			illum ipsa tempore quibusdam, debitis sint harum eos labore eum nobis
+			error architecto sit.
+		</div>
+		<div class="lorem">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae
+			reprehenderit asperiores laborum perspiciatis veritatis libero laudantium
+			illum ipsa tempore quibusdam, debitis sint harum eos labore eum nobis
+			error architecto sit.
+		</div>
+		<div class="lorem">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae
+			reprehenderit asperiores laborum perspiciatis veritatis libero laudantium
+			illum ipsa tempore quibusdam, debitis sint harum eos labore eum nobis
+			error architecto sit.
+		</div>
+		<div class="lorem">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae
+			reprehenderit asperiores laborum perspiciatis veritatis libero laudantium
+			illum ipsa tempore quibusdam, debitis sint harum eos labore eum nobis
+			error architecto sit.
+		</div>
+		<div class="lorem">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae
+			reprehenderit asperiores laborum perspiciatis veritatis libero laudantium
+			illum ipsa tempore quibusdam, debitis sint harum eos labore eum nobis
+			error architecto sit.
+		</div>
+		<div class="lorem">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae
+			reprehenderit asperiores laborum perspiciatis veritatis libero laudantium
+			illum ipsa tempore quibusdam, debitis sint harum eos labore eum nobis
+			error architecto sit.
+		</div>
+		<div class="lorem">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae
+			reprehenderit asperiores laborum perspiciatis veritatis libero laudantium
+			illum ipsa tempore quibusdam, debitis sint harum eos labore eum nobis
+			error architecto sit.
+		</div>
+		<div>This is the bottom.</div>
+		<script>
+			let count = 0
+			const resizeCountDiv = document.getElementById("resize-count")
+			resizeCountDiv.innerText = "resizeCount: " + count
+			const resizeHeightDiv = document.getElementById("resize-height")
+			resizeHeightDiv.innerText = "resizeHeight: " + window.innerHeight
+			window.addEventListener("resize", () => {
+				resizeHeightDiv.innerText = "resizeHeight: " + window.innerHeight
+				resizeCountDiv.innerText = "resizeCount: " + ++count
+				setTimeout(() => {
+					resizeHeightDiv.innerText = "resizeHeight: " + window.innerHeight
+					// resizeCountDiv.innerText = "resizeCount: " + ++count
+				}, 1)
+
+				// document.body.parentElement.style.height = window.innerHeight + "px"
+				document.body.style.height = window.innerHeight + "px"
+			})
+			const pollHeightDiv = document.getElementById("poll-height")
+			pollHeightDiv.innerText = "pollHeight: " + window.innerHeight
+			window.setInterval(() => {
+				pollHeightDiv.innerText = "pollHeight: " + window.innerHeight
+			}, 100)
+
+			const bodyHeightDiv = document.getElementById("body-height")
+			bodyHeightDiv.innerText =
+				"bodyHeight: " + document.body.getBoundingClientRect().height
+			window.setInterval(() => {
+				bodyHeightDiv.innerText =
+					"bodyHeight: " + document.body.getBoundingClientRect().height
+			}, 100)
+
+			const htmlHeightDiv = document.getElementById("html-height")
+			htmlHeightDiv.innerText =
+				"htmlHeight: " +
+				document.body.parentElement.getBoundingClientRect().height
+			window.setInterval(() => {
+				htmlHeightDiv.innerText =
+					"htmlHeight: " +
+					document.body.parentElement.getBoundingClientRect().height
+			}, 100)
+		</script>
+	</body>
+</html>
