@@ -12,6 +12,8 @@
 			body {
 				padding: 0;
 				margin: 0;
+				height: 100%;
+				width: 100%;
 			}
 			body {
 				box-sizing: border-box;
@@ -99,7 +101,6 @@
 			illum ipsa tempore quibusdam, debitis sint harum eos labore eum nobis
 			error architecto sit.
 		</div>
-		<div>This is the bottom.</div>
 		<script>
 			let count = 0
 			const resizeCountDiv = document.getElementById("resize-count")
@@ -109,14 +110,8 @@
 			window.addEventListener("resize", () => {
 				resizeHeightDiv.innerText = "resizeHeight: " + window.innerHeight
 				resizeCountDiv.innerText = "resizeCount: " + ++count
-				setTimeout(() => {
-					resizeHeightDiv.innerText = "resizeHeight: " + window.innerHeight
-					// resizeCountDiv.innerText = "resizeCount: " + ++count
-				}, 1)
-
-				// document.body.parentElement.style.height = window.innerHeight + "px"
-				document.body.style.height = window.innerHeight + "px"
 			})
+
 			const pollHeightDiv = document.getElementById("poll-height")
 			pollHeightDiv.innerText = "pollHeight: " + window.innerHeight
 			window.setInterval(() => {
