@@ -1,17 +1,17 @@
-## React Native WebView Resize Bug
+## React Native WebView Safe Area Inset Bug
 
-This app shows an html webpage inside a webview that resizes when the keyboard opens.
+This app shows an html webpage inside a webview that measures the `env(safe-area-inset-*)` css variables.
 
-When you focus on the `<input/>` element, the keyboard will open and wehen you click the `<button/>`, the keyboard will dismiss.
+You will notice that these variables are not available on the initial load of the app, or after the window load event, or the document DOMContentLoaded event. These CSS variables only seem to be available at some arbitrary time after the app is loaded.
 
-You will notice that when the keyboard dismisses, the resize event is fired early, before the `window.innerHeight` of the webview has changed. However, you'll notice that if we poll every 100ms on the `window.innerHeight`, it does change.
+However, if you open up the same webpage (http://localhost:8000/index.html) in iOS Safari in landscape mode and hit refresh, you'll notice that these CSS variables are available at initial load time.
 
 ## Running the app
 
 ```sh
 git clone https://github.com/ccorcos/react-native-demo.git
 cd react-native-demo
-git checkout resize-bug
+git checkout safe-area-inset-bug
 npm install
 # Server the index.html file
 python -m SimpleHTTPServer 8000
