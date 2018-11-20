@@ -8,10 +8,15 @@ You will notice that when the keyboard dismisses, the resize event is fired earl
 
 ## Running the app
 
-```
+```sh
 git clone https://github.com/ccorcos/react-native-demo.git
+cd react-native-demo
+git checkout resize-bug
 npm install
+# Server the index.html file
 python -m SimpleHTTPServer 8000
+# Start react native
 npm start
+# Open Xcode and run the app.
 open ios/chetapp.xcodeproj
 ```
