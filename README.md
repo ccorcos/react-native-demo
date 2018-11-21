@@ -8,6 +8,8 @@ When you focus on the `<input/>` element, the keyboard will open and wehen you c
 
 ![](./bug.png)
 
+> Check out the `resize-bug-2-fix` branch for a fix based on [this fork](https://github.com/ccorcos/react-native-webview).
+
 ## Running the app
 
 ```sh
