@@ -4,9 +4,9 @@ This app shows an html webpage inside a webview that resizes when the keyboard o
 
 When you focus on the `<input/>` element, the keyboard will open and wehen you click the `<button/>`, the keyboard will dismiss.
 
-You will notice that when the keyboard dismisses, the resize event is fired early, before the `window.innerHeight` of the webview has changed. However, you'll notice that if we poll every 100ms on the `window.innerHeight`, it does change.
+**You will notice that when editing an input that is lower in the keybaord, the entire body to gets moved up outside of the webview frame in an undesireable fashion.**
 
-**Edit 2:** This also shows how editing an input that is lower in the app causes the entire body to get moved up outside of the webview fram an undesireable fashion.
+![](./bug.png)
 
 ## Running the app
 

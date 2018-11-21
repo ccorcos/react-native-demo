@@ -28,19 +28,6 @@ const updateListener =
 const resetListener =
 	Platform.OS === "android" ? "keyboardDidHide" : "keyboardWillHide"
 
-const noAnimation = {
-	duration: 0,
-	// create: {
-	// 	type: LayoutAnimation.Types.linear,
-	// },
-	// update: {
-	// 	type: LayoutAnimation.Types.linear,
-	// },
-	// delete: {
-	// 	type: LayoutAnimation.Types.linear,
-	// },
-}
-
 const springAnimation = {
 	duration: 500,
 	create: {
@@ -53,8 +40,6 @@ const springAnimation = {
 		springDamping: 200,
 	},
 }
-
-const resizeAnimation = springAnimation
 
 export default class App extends Component<AppProps, AppState> {
 	state = {
@@ -72,14 +57,14 @@ export default class App extends Component<AppProps, AppState> {
 	}
 
 	updateKeyboardSpace = event => {
-		LayoutAnimation.configureNext(resizeAnimation)
+		LayoutAnimation.configureNext(springAnimation)
 		this.setState({
 			height: event.endCoordinates.screenY,
 		})
 	}
 
 	resetKeyboardSpace = () => {
-		LayoutAnimation.configureNext(resizeAnimation)
+		LayoutAnimation.configureNext(springAnimation)
 		this.setState({ height: Dimensions.get("window").height })
 	}
 
@@ -100,6 +85,7 @@ export default class App extends Component<AppProps, AppState> {
 					automaticallyAdjustContentInsets={false}
 					overScrollMode="never"
 					bounces={false}
+					scrollEnabled={false}
 					hideKeyboardAccessoryView={true}
 					source={{ uri: "http://localhost:8000/index.html" }}
 				/>
